@@ -1,0 +1,27 @@
+{% extends 'polls/loged_home.html' %}
+
+{% block content %}
+{% if latest_question_list %}
+  {% for question in latest_question_list %}
+          <!-- Title -->
+          <h1 class="mt-4" ><a href="/posts/{{ question.id }}/">{{question.question_text}}</a></h1>
+
+          <!-- Author -->
+          <p class="lead">
+           Posted by
+            <a href="#">{{question.author}}</a>
+          </p>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>{{question.pub_date}}</p>
+
+          <hr>
+
+          <!-- Preview Image -->
+        <!--  <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">-->
+          <hr>
+            {%endfor%}
+          {%endif%}
+{%endblock%}
